@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MProject.MainPage" BackgroundColor="DeepSkyBlue">
+    <ScrollView>
+        <StackLayout BackgroundColor="White" Margin="10">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Name" Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry  x:Name="Stu_Name" Placeholder="Enter the name" Grid.Row="0" Margin="5" Grid.Column="1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Department" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry  x:Name="Stu_Dept" Placeholder="Enter the department" Grid.Row="1" Margin="5" Grid.Column="1" HorizontalOptions="FillAndExpand" />
+        </Grid>
+        <StackLayout Orientation="Vertical">
+            <Button Text=" Add " CornerRadius="10" BackgroundColor="Blue" HorizontalOptions="Center" Margin="5" Clicked="Add_Button_Clicked"/>
+            <Button  Text=" Show " CornerRadius="10" BackgroundColor="Blue" HorizontalOptions="Center" Margin="5" Clicked="Show_Button_Clicked"/>
+
+
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Students" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10" FontSize="20" />
+        </StackLayout>
+        <StackLayout Margin="10" Orientation="Horizontal">
+            <ListView x:Name="Stu_List_View" ItemTapped="Stu_List_View_ItemTapped"  >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding ID}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Name}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Department}" HorizontalOptions="Center" Margin="10"/>
+                                 
+                                </StackLayout>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+            
+    </StackLayout>
+    </ScrollView>
+
+</ContentPage>
