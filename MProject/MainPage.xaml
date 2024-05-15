@@ -35,7 +35,7 @@
                             <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding ID}" HorizontalOptions="Center" Margin="10"/>
                                     <Label Text="{Binding Name}" HorizontalOptions="Center" Margin="10"/>
-                                    <Label Text="{Binding Department}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Department}" HorizontalOptions="Center" Margin="10"/> 
                                  
                                 </StackLayout>
                             

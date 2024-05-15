@@ -14,8 +14,8 @@ namespace MProject
         public int ID { get; set; } 
         public string Name { get; set; }    
         public string Department { get; set; }
-
-        public StudentClass() { }
+        
+        public StudentClass() { } 
 
         public StudentClass(int id,string name, string deparment) 
         {

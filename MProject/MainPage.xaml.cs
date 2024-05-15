@@ -39,7 +39,7 @@
             
             if (result)
             {
-
+               
                 DeleteStudent(student);
             }
         }
