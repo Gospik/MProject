@@ -24,9 +24,11 @@
 
 
         </StackLayout>
-        <StackLayout>
+        
+            <StackLayout>
             <Label Text="Students" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10" FontSize="20" />
         </StackLayout>
+            
         <StackLayout Margin="10" Orientation="Horizontal">
             <ListView x:Name="Stu_List_View" ItemTapped="Stu_List_View_ItemTapped"  >
                 <ListView.ItemTemplate >
@@ -44,6 +46,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+            
             
     </StackLayout>
     </ScrollView>

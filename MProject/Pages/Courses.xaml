@@ -3,5 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MProject.Pages.Courses"
              Title="Courses">
+    <ScrollView>
+        <StackLayout BackgroundColor="White" Margin="10">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Code" Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry  x:Name="Course_Code" Placeholder="Enter the Course Code" Grid.Row="0" Margin="5" Grid.Column="1" HorizontalOptions="FillAndExpand" />
+                <Label Text="Course Name" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry  x:Name="Course_Name" Placeholder="Enter the Course Name" Grid.Row="1" Margin="5" Grid.Column="1" HorizontalOptions="FillAndExpand" />
+            </Grid>
+            <StackLayout Orientation="Vertical">
+                <Button Text=" Add " CornerRadius="10" BackgroundColor="Blue" HorizontalOptions="Center" Margin="5" Clicked="Add_Button_Clicked"/>
+                <Button  Text=" Show " CornerRadius="10" BackgroundColor="Blue" HorizontalOptions="Center" Margin="5" Clicked="Show_Button_Clicked"/>
 
+
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Courses" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10" FontSize="20" />
+            </StackLayout>
+
+            <StackLayout Margin="10" Orientation="Horizontal">
+                <ListView x:Name="Course_List_View" ItemTapped="Course_List_View_ItemTapped"  >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <Label Text="{Binding Course_Code}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Course_Name}" HorizontalOptions="Center" Margin="10"/>
+
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
