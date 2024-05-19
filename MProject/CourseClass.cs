@@ -1,4 +1,4 @@
-﻿
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,7 @@ namespace MProject
 {
     public class CourseClass
     {
+        [PrimaryKey]
         public int Course_Code { get; set; }
         public string Course_Name { get; set; }
             

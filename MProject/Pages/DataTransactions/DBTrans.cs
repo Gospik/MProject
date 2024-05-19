@@ -21,6 +21,7 @@ namespace MProject.Pages.DataTransactions
             conn = new SQLiteConnection(this.dbPath);
             conn.CreateTable<StudentClass>();
             conn.CreateTable<CourseClass>();
+            conn.CreateTable<GlobalClass>();
         }
         public List<StudentClass> GetAllStudents() 
         {
@@ -54,6 +55,21 @@ namespace MProject.Pages.DataTransactions
         {
             conn = new SQLiteConnection(this.dbPath);
             conn.Delete(new CourseClass { Course_Code = course_Code});
+        }
+        public List<GlobalClass> GetEnroll() 
+        {
+            Init();
+            return conn.Table<GlobalClass>().ToList();
+        }
+        public void Enroll(GlobalClass enrollment)
+        {
+            conn = new SQLiteConnection(this.dbPath);
+            conn.Insert(enrollment);
+        }
+        public void DeleteEnroll(int id)
+        {
+            conn =new SQLiteConnection(this.dbPath);
+            conn.Delete(new GlobalClass { ID = id });
         }
     }
 }

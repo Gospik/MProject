@@ -2,6 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MProject.Pages.Enroll"
-             Title="Enroll">
+             Title="Enroll" BackgroundColor="DeepSkyBlue">
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Margin="10" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal">
+                <ListView x:Name="Stu_List_View" ItemTapped="Stu_List_View_ItemTapped"  Margin="10">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding ID}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Name}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Department}" HorizontalOptions="Center" Margin="10"/>
 
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="Course_List_View" ItemTapped="Course_List_View_ItemTapped"  >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text="{Binding Course_Code}" HorizontalOptions="Center" Margin="10"/>
+                                    <Label Text="{Binding Course_Name}" HorizontalOptions="Center" Margin="10"/>
+
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" Margin="5">
+                <Button Text=" Add " CornerRadius="10" BackgroundColor="Blue" HorizontalOptions="Center" Margin="5" Clicked="Add_Button_Clicked"/>
+                <Button  Text=" Show " CornerRadius="10" BackgroundColor="Blue" HorizontalOptions="Center" Margin="5" Clicked="Show_Button_Clicked"/>
+
+
+            </StackLayout>
+            <ListView x:Name="Enroll_List_View" ItemTapped="Enroll_List_View_ItemTapped"  >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="{Binding ID}" HorizontalOptions="Center" Margin="10"/>
+                                <Label Text="{Binding Name}" HorizontalOptions="Center" Margin="10"/>
+                                <Label Text="{Binding Course_Code}" HorizontalOptions="Center" Margin="10"/>
+
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
