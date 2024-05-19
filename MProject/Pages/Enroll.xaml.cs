@@ -35,14 +35,15 @@ public partial class Enroll : ContentPage
             {
                 ID = selectedStudent.ID,
                 Name = selectedStudent.Name,
-                
+                Course_Code = selectedCourse.Course_Code,
+                Course_Name = selectedCourse.Course_Name,
             }) ;
         }
         else
         {
             return;
         }
-        Course_List_View.ItemsSource = App.DBTrans.GetAllCourses();
+        Enroll_List_View.ItemsSource = App.DBTrans.GetEnroll();
     }
 
     private void Show_Button_Clicked(object sender, EventArgs e)
@@ -52,8 +53,25 @@ public partial class Enroll : ContentPage
         Enroll_List_View.ItemsSource = App.DBTrans.GetEnroll();
     }
 
-    private void Enroll_List_View_ItemTapped(object sender, ItemTappedEventArgs e)
+    private async void Enroll_List_View_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        var enroll = e.Item as GlobalClass;
+        string message = $"Student Name: {enroll.Name}\nCourse Code: {enroll.Course_Name}";
+
+
+        var result = await DisplayAlert("Selected Course", message, "Delete", "Cancel");
+
+
+        if (result)
+        {
+
+            DeleteEnroll(enroll);
+        }
+    }
+    private void DeleteEnroll(GlobalClass enroll)
     {
 
+        App.DBTrans.DeleteEnroll(enroll.ID);
+        Enroll_List_View.ItemsSource = App.DBTrans.GetEnroll();
     }
 }
