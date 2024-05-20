@@ -21,7 +21,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <ListView x:Name="Course_List_View" ItemTapped="Course_List_View_ItemTapped"  >
+                <ListView x:Name="Course_List_View" ItemTapped="Course_List_View_ItemTapped" Margin="10" >
                     <ListView.ItemTemplate >
                         <DataTemplate>
                             <ViewCell>

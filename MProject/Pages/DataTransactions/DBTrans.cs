@@ -14,8 +14,10 @@ namespace MProject.Pages.DataTransactions
 
         public DBTrans(string _dbPath)
         {
-            this.dbPath = _dbPath;  
+            this.dbPath = _dbPath;
+        
         }
+        
         public void Init()
         {
             conn = new SQLiteConnection(this.dbPath);
@@ -51,10 +53,10 @@ namespace MProject.Pages.DataTransactions
             conn.Insert(course);
         }
 
-        public void DeleteCourse(int course_Code)
+        public void DeleteCourse(int course_ID)
         {
             conn = new SQLiteConnection(this.dbPath);
-            conn.Delete(new CourseClass { Course_Code = course_Code});
+            conn.Delete(new CourseClass { Course_ID = course_ID});
         }
         public List<GlobalClass> GetEnroll() 
         {

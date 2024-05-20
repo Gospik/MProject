@@ -16,7 +16,7 @@ public partial class Courses : ContentPage
         if (int.TryParse(Course_Code.Text, out courseCode))
         {
            
-            App.DBTrans.AddCourse(new CourseClass { Course_Code = courseCode, Course_Name = Course_Name.Text });
+            App.DBTrans.AddCourse(new CourseClass {Course_Code = courseCode, Course_Name = Course_Name.Text });
         }
         else
         {
@@ -49,7 +49,7 @@ public partial class Courses : ContentPage
     private void DeleteCourse(CourseClass course)
     {
 
-        App.DBTrans.DeleteCourse(course.Course_Code);
+        App.DBTrans.DeleteCourse(course.Course_ID);
         Course_List_View.ItemsSource = App.DBTrans.GetAllCourses();
     }
 

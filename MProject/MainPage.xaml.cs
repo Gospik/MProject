@@ -15,11 +15,7 @@
 
         private void Add_Button_Clicked(object sender, EventArgs e)
         {
-            App.DBTrans.Add(new StudentClass
-            {
-                Name = Stu_Name.Text,
-                Department = Stu_Dept.Text,
-            });
+            App.DBTrans.Add(new StudentClass   {   Name = Stu_Name.Text,    Department = Stu_Dept.Text,  });
             Stu_List_View.ItemsSource = App.DBTrans.GetAllStudents();
         }
 
